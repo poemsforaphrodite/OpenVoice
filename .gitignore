@@ -1,4 +1,5 @@
 __pycache__/
+path
 .ipynb_checkpoints/
 processed
 outputs

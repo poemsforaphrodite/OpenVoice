@@ -1,3 +1,9 @@
+---
+title: openvoice2
+app_file: openvoice_app.py
+sdk: gradio
+sdk_version: 4.31.5
+---
 <div align="center">
   <div>&nbsp;</div>
   <img src="resources/openvoicelogo.jpg" width="400"/> 
