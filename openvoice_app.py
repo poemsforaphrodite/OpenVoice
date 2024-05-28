@@ -152,41 +152,6 @@ def predict(prompt, style, audio_file_pth, agree):
 
 title = "MyShell OpenVoice"
 
-description = """
-We introduce OpenVoice, a versatile instant voice cloning approach that requires only a short audio clip from the reference speaker to replicate their voice and generate speech in multiple languages. OpenVoice enables granular control over voice styles, including emotion, accent, rhythm, pauses, and intonation, in addition to replicating the tone color of the reference speaker. OpenVoice also achieves zero-shot cross-lingual voice cloning for languages not included in the massive-speaker training set.
-"""
-
-markdown_table = """
-<div align="center" style="margin-bottom: 10px;">
-
-|               |               |               |
-| :-----------: | :-----------: | :-----------: | 
-| **OpenSource Repo** | **Project Page** | **Join the Community** |        
-| <div style='text-align: center;'><a style="display:inline-block,align:center" href='https://github.com/myshell-ai/OpenVoice'><img src='https://img.shields.io/github/stars/myshell-ai/OpenVoice?style=social' /></a></div> | [OpenVoice](https://research.myshell.ai/open-voice) | [![Discord](https://img.shields.io/discord/1122227993805336617?color=%239B59B6&label=%20Discord%20)](https://discord.gg/myshell) |
-
-</div>
-"""
-
-markdown_table_v2 = """
-<div align="center" style="margin-bottom: 2px;">
-
-|               |               |               |              |
-| :-----------: | :-----------: | :-----------: | :-----------: | 
-| **OpenSource Repo** | <div style='text-align: center;'><a style="display:inline-block,align:center" href='https://github.com/myshell-ai/OpenVoice'><img src='https://img.shields.io/github/stars/myshell-ai/OpenVoice?style=social' /></a></div> |  **Project Page** |  [OpenVoice](https://research.myshell.ai/open-voice) |     
-
-| | |
-| :-----------: | :-----------: |
-**Join the Community** |   [![Discord](https://img.shields.io/discord/1122227993805336617?color=%239B59B6&label=%20Discord%20)](https://discord.gg/myshell) |
-
-</div>
-"""
-content = """
-<div>
-  <strong>If the generated voice does not sound like the reference voice, please refer to <a href='https://github.com/myshell-ai/OpenVoice/blob/main/docs/QA.md'>this QnA</a>.</strong> <strong>For multi-lingual & cross-lingual examples, please refer to <a href='https://github.com/myshell-ai/OpenVoice/blob/main/demo_part2.ipynb'>this jupyter notebook</a>.</strong>
-  This online demo mainly supports <strong>English</strong>. The <em>default</em> style also supports <strong>Chinese</strong>. But OpenVoice can adapt to any other language as long as a base speaker is provided.
-</div>
-"""
-wrapped_markdown_content = f"<div style='border: 1px solid #000; padding: 10px;'>{content}</div>"
 
 
 examples = [
@@ -210,25 +175,6 @@ examples = [
 ]
 
 with gr.Blocks(analytics_enabled=False) as demo:
-
-    with gr.Row():
-        with gr.Column():
-            with gr.Row():
-                gr.Markdown(
-                    """
-                    ## <img src="https://huggingface.co/spaces/myshell-ai/OpenVoice/raw/main/logo.jpg" height="40"/>
-                    """
-                )
-            with gr.Row():    
-                gr.Markdown(markdown_table_v2)
-            with gr.Row():
-                gr.Markdown(description)
-        with gr.Column():
-            gr.Video('https://github.com/myshell-ai/OpenVoice/assets/40556743/3cba936f-82bf-476c-9e52-09f0f417bb2f', autoplay=True)
-            
-    with gr.Row():
-        gr.HTML(wrapped_markdown_content)
-
     with gr.Row():
         with gr.Column():
             input_text_gr = gr.Textbox(
